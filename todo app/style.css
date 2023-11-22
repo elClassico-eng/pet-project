@@ -9,97 +9,99 @@ body {
 }
 
 .container {
+    display: flex;
     width: 100%;
     min-height: 100vh;
-    background: rgb(63, 94, 251);
-    background: radial-gradient(
-        circle,
-        rgba(63, 94, 251, 1) 0%,
-        rgba(235, 73, 255, 1) 100%
-    );
-    padding: 10px;
+    background: #987eff;
 }
 
-.to-do {
+.to-do-container {
+    display: flex;
+    width: 100%;
+    height: 600px;
+    max-width: 1200px;
+    background: #a18aff;
+    border: 3px solid white;
+    margin: 120px auto 120px auto;
+    border-radius: 15px;
+}
+
+.aside__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background: #fff;
+}
+
+.account-container {
+    display: flex;
+    gap: 20px;
+}
+
+.account__about {
     display: flex;
     flex-direction: column;
-    background: #fff;
-    width: 100%;
-    max-width: 540px;
-    margin: 100px auto 400px auto;
-    padding: 15px;
-    border-radius: 10px;
+    gap: 7px;
 }
 
-.to-do__h2 {
-    display: flex;
-    gap: 5px;
+.name {
+    font-size: 24px;
 }
 
-.to-do__h2 img {
-    width: 30px;
-    align-items: center;
-    margin-bottom: 40px;
+.status {
+    color: #a18aff;
+    font-weight: bold;
 }
 
-.row {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    align-self: center;
-    margin-bottom: 25px;
-}
-
-#input-box {
-    flex: 1;
-    min-width: 300px;
-    padding: 5px;
-    border: none;
-    outline: none;
-    background: transparent;
-    margin-right: 10px;
-}
-
-.btn {
-    width: 100px;
-    padding: 6px 10px;
-    background: #ff5945;
-    font-size: 16px;
-    color: #fff;
-    font-weight: 100;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-
-.list-item {
-    position: relative;
-    list-style: none;
-    padding: 16px 20px 16px 50px;
-    font-size: 17px;
-    cursor: pointer;
-}
-
-.list-item::before {
-    content: "";
-    width: 20px;
-    height: 20px;
-    position: absolute;
+.avatar {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    background-image: url(./Img/unchecked.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+    border: 1px solid black;
+    background-size: contain;
     background-position: center;
-    top: 16px;
-    left: 10px;
+    background-repeat: no-repeat;
 }
 
-.checked {
-    color: #555;
-    text-decoration: line-through;
+/*   */
+
+.aside__task {
+    flex: 3;
+    background: inherit;
 }
 
-.checked::before {
-    background-image: url(./Img/checked.png);
+.container-task-input {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin: 40px auto 15px 60px;
+}
+
+.container-title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #fff;
+}
+
+.title {
+    letter-spacing: 0.2em;
+}
+
+.subtitle {
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    color: black;
+}
+
+.input-container {
+    margin-right: 40px;
+}
+
+#input {
+    border: none;
+    width: 800px;
+    padding: 15px;
+    border-radius: 20px;
 }

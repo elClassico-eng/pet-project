@@ -15,24 +15,31 @@
     </head>
     <body>
         <div class="container">
-            <div class="to-do">
-                <h2 class="to-do__h2">
-                    To-Do List
-                    <img class="logo" src="./Img/icon.png" alt="todo-list" />
-                </h2>
-                <div class="row">
-                    <input
-                        type="text"
-                        id="input-box"
-                        placeholder="Add new task"
-                    />
-                    <button class="btn">Add</button>
-                </div>
-                <ul id="list-container">
-                    <!-- <li class="list-item checked">Item 1</li>
-                    <li class="list-item">Item 2</li>
-                    <li class="list-item">Item 3</li> -->
-                </ul>
+            <div class="to-do-container">
+                <aside class="aside__info">
+                    <div class="account-container">
+                        <img class="avatar" src="./Img/32.jpg" alt="" />
+                        <div class="account__about">
+                            <p class="name">Danya</p>
+                            <p class="status">Front-end developer</p>
+                        </div>
+                    </div>
+                </aside>
+                <aside class="aside__task">
+                    <div class="container-task-input">
+                        <div class="container-title">
+                            <h2 class="title">Today main <b>focus</b></h2>
+                            <p class="subtitle">We can...</p>
+                        </div>
+                        <div class="input-container">
+                            <input
+                                type="text"
+                                id="input"
+                                placeholder="Add new task"
+                            />
+                        </div>
+                    </div>
+                </aside>
             </div>
         </div>
     </body>
