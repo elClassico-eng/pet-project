@@ -28,7 +28,9 @@ body {
 
 .aside__info {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: space-evenly;
     align-items: center;
     flex: 1;
     background: #fff;
@@ -64,6 +66,23 @@ body {
     background-repeat: no-repeat;
 }
 
+.recucle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.recucle-img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.recucle-txt {
+    font-size: 18px;
+}
+
 /*   */
 
 .aside__task {
@@ -97,6 +116,9 @@ body {
 
 .input-container {
     margin-right: 40px;
+    display: inline-flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 #input {
@@ -104,4 +126,60 @@ body {
     width: 800px;
     padding: 15px;
     border-radius: 20px;
+    outline: none;
+}
+
+.btn-input {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.task-container {
+    display: flex;
+    margin-right: 40px;
+}
+
+.list-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task__item__container {
+    list-style: none;
+    padding: 10px;
+    border-radius: 20px;
+    background: #fff;
+}
+
+.task__item {
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    font-size: 17px;
+    padding: 13px 8px 12px 50px;
+    color: #000;
+}
+
+.task__item::before {
+    content: "";
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background-image: url(./Img/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 10px;
+}
+
+.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+.checked::before {
+    background-image: url(./Img/checked.png);
 }

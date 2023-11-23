@@ -1,26 +1,48 @@
 "use strict";
 
-// const input = document.querySelector("#input-box");
-// const addBtn = document.querySelector(".btn");
-// const listContainer = document.querySelector("#list-container");
+const input = document.querySelector("#input");
+const btn = document.querySelector(".btn-input");
+const listContainer = document.querySelector(".list-container");
 
-// function removeTask(task) {
-//     task.addEventListener("click", function () {
-//         this.classList.toggle("checked");
-//     });
-// }
+function saveData() {
+    const tasks = Array.from(listContainer.querySelectorAll(".task__item")).map(
+        (task) => task.textContent
+    );
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
 
-// addBtn.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     const inputValue = input.value;
+function deleteTask(task) {
+    task.addEventListener("click", function () {
+        setTimeout(() => {
+            this.parentElement.remove();
+            saveData();
+        }, 3000);
+    });
+}
 
-//     if (!inputValue) return;
-//     else {
-//         let taskList = document.createElement("li");
-//         taskList.classList.add("list-item");
-//         taskList.textContent = inputValue;
-//         listContainer.prepend(taskList);
-//         removeTask(taskList);
-//         input.value = "";
-//     }
-// });
+listContainer.addEventListener("click", (e) => {
+    const taskItem = e.target.closest(".task__item");
+    if (!taskItem) return;
+    else {
+        taskItem.classList.toggle("checked");
+    }
+});
+
+btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const inputValue = input.value;
+
+    if (!inputValue) return;
+
+    const taskItemContainer = document.createElement("li");
+    taskItemContainer.classList.add("task__item__container");
+
+    taskItemContainer.innerHTML = `
+        <span class="task__item">${inputValue}</span>
+    `;
+
+    listContainer.insertAdjacentElement("afterbegin", taskItemContainer);
+    deleteTask(taskItemContainer.querySelector(".task__item"));
+    input.value = "";
+    saveData();
+});
