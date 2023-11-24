@@ -66,20 +66,45 @@ body {
     background-repeat: no-repeat;
 }
 
-.recucle-container {
+.recycle-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    background-color: #a18aff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
 }
 
-.recucle-img {
+.recycled-tasks {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recycled-tasks li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.recycled-tasks li:hover {
+    background-color: #a18aff;
+}
+
+.recycle-img {
     width: 24px;
     height: 24px;
     cursor: pointer;
 }
 
-.recucle-txt {
+.recycle-txt {
     font-size: 18px;
 }
 
